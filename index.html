@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SoundSpot — Guess the Song</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-dot"></span>SoundSpot</div>
+      <button id="resetBtn" class="ghost">New game</button>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">CLIP CHALLENGE</p>
+      <h1>How little can you hear<br>before you know the song?</h1>
+      <p class="sub">Start with a tiny clue. Reveal more only when you need it.</p>
+    </section>
+
+    <section class="game-card">
+      <div class="status-row">
+        <span id="roundLabel">ROUND 1 / 5</span>
+        <span id="scoreLabel">SCORE 0</span>
+      </div>
+
+      <div class="difficulty">
+        <button class="diff active">Easy</button>
+        <button class="diff">Medium</button>
+        <button class="diff">Hard</button>
+      </div>
+
+      <div class="player">
+        <div class="stage" id="stageLabel">0.1s</div>
+        <button id="playBtn" class="play" aria-label="Play clue">▶</button>
+        <p id="playHint">Press play to hear the clue</p>
+      </div>
+
+      <div class="ladder" id="ladder">
+        <button class="clip active" data-index="0">0.1s</button>
+        <button class="clip locked" data-index="1">0.5s</button>
+        <button class="clip locked" data-index="2">2s</button>
+        <button class="clip locked" data-index="3">8s</button>
+        <button class="clip locked" data-index="4">15s</button>
+      </div>
+
+      <div class="guess-area">
+        <label for="guessInput">Name that track</label>
+        <div class="search-row">
+          <input id="guessInput" autocomplete="off" placeholder="Type a song title…">
+          <button id="guessBtn">Guess</button>
+        </div>
+        <div id="suggestions" class="suggestions"></div>
+        <button id="skipBtn" class="skip">I don't know — reveal more</button>
+      </div>
+
+      <div id="result" class="result hidden"></div>
+    </section>
+
+    <section class="how">
+      <div><b>01</b><span>Listen</span><small>Hear the shortest clue.</small></div>
+      <div><b>02</b><span>Guess</span><small>Enter the title.</small></div>
+      <div><b>03</b><span>Reveal</span><small>Get more audio if needed.</small></div>
+    </section>
+
+    <footer>SoundSpot MVP · Built for learning and experimentation</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
